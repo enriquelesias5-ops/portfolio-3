@@ -1,0 +1,1041 @@
+<html lang="en">
+<head>
+  <meta name="referrer" content="no-referrer">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Satveenraj Singh | Cyber-Security & Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+  
+<body>
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; opacity: 0.45;"></canvas>
+
+    <div id="custom-cursor"></div>
+    
+    <div id="loader">
+        <div class="loader-bg-grid"></div>
+        <div class="radial-hud-wrapper">
+            <!-- Center Core -->
+            <div class="loader-center-core">
+                <div class="core-scanner-ring"></div>
+                <div class="core-telemetry-data">
+                    <div id="loader-number">000%</div>
+                    <div id="loader-status">INITIALIZING_CORE...</div>
+                </div>
+            </div>
+            
+            <!-- Orbiting Nodes (Satellites) -->
+            <div class="orbiting-satellites">
+                <!-- 01: Cyber Security -->
+                <div class="satellite-wrapper" style="--angle: 0deg; --brand-color: var(--accent-green);">
+                    <div class="node-line"></div>
+                    <div class="satellite-node">
+                        <div class="node-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <span class="node-text">CYBER</span>
+                    </div>
+                </div>
+                <!-- 02: Web Development -->
+                <div class="satellite-wrapper" style="--angle: 72deg; --brand-color: var(--primary-blue);">
+                    <div class="node-line"></div>
+                    <div class="satellite-node">
+                        <div class="node-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <span class="node-text">WEB_DEV</span>
+                    </div>
+                </div>
+                <!-- 03: Mechanical -->
+                <div class="satellite-wrapper" style="--angle: 144deg; --brand-color: #ffb86c;">
+                    <div class="node-line"></div>
+                    <div class="satellite-node">
+                        <div class="node-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                        <span class="node-text">MECH</span>
+                    </div>
+                </div>
+                <!-- 04: Electrical -->
+                <div class="satellite-wrapper" style="--angle: 216deg; --brand-color: #ff5555;">
+                    <div class="node-line"></div>
+                    <div class="satellite-node">
+                        <div class="node-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
+                        <span class="node-text">ELEC</span>
+                    </div>
+                </div>
+                <!-- 05: Creative Design -->
+                <div class="satellite-wrapper" style="--angle: 288deg; --brand-color: #bd93f9;">
+                    <div class="node-line"></div>
+                    <div class="satellite-node">
+                        <div class="node-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"/><circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"/><circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="14.5" r="1.5" fill="currentColor"/></svg>
+                        </div>
+                        <span class="node-text">DESIGN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="radar-container">
+        <div class="radar-pulse"></div>
+        <div class="radar-pulse"></div>
+        <div class="radar-pulse"></div>
+    </div>
+
+    <div class="screen-container">
+
+   <nav>
+     
+    <a href="#home" data-trn="nav_home">Home</a>
+    <a href="#about" data-trn="nav_about">About</a> <!-- New Link -->
+    <a href="#skills" data-trn="nav_skills">Skills</a>
+    <a href="#experience" data-trn="nav_experience">Experience</a>
+    <a href="#education" data-trn="nav_education">Education</a>
+    <a href="#achievements" data-trn="nav_achievements">Projects</a>
+    <a href="#contact" class="contact-link" data-trn="nav_contact">Establish_Connection</a>
+    <button id="theme-toggle" class="theme-toggle-btn"><span style="font-size: 1.25rem;">🕶️</span></button>
+    <button id="lang-toggle" class="lang-toggle-btn"><span style="font-size: 1.25rem;">🇬🇧</span></button>
+    <button id="feed-toggle" class="feed-toggle-btn" data-trn="feed_toggle">[FEED: GALAXY]</button>
+<div class="connection-hud">
+    <span class="pulse-dot"></span>
+    <span id="ping-value">24</span>ms
+</div>
+</nav>
+
+    <main> 
+    <section id="home" class="hero-section" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden;">
+        <canvas id="hyperspeed-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.35;"></canvas>
+        <h1 class="hero-big-text" style="position: relative; z-index: 2; font-family: 'JetBrains Mono', monospace; font-size: clamp(3rem, 12vw, 8rem); font-weight: 800; line-height: 0.9; margin: 0; letter-spacing: -2px; text-transform: uppercase; color: var(--text-white); text-shadow: 0 0 20px rgba(0, 123, 255, 0.4);">
+    <span style="font-size: 0.3em; color: var(--primary-blue); letter-spacing: 5px; display: block; margin-bottom: 5px; font-family: 'JetBrains Mono';">SYSTEM_OPERATOR:</span> <br>
+    
+    <!-- Apply the class here for your Surname -->
+    <span class="glitch-text">SINGH</span>
+    
+    <!-- Apply the class here for your First Name -->
+    <span class="glitch-text" style="color: var(--text-gray);">SATVEENRAJ</span>
+</h1>
+<div class="typing-container" style="position: relative; z-index: 2;">
+    <div class="typewriter-text" data-trn="hero_typewriter">STRATEGY • SECURITY • EXECUTION</div>
+</div>
+        
+        <div class="hero-sub-box" style="position: relative; z-index: 2; background: rgba(0, 123, 255, 0.1); border: 1px solid var(--primary-blue); padding: 10px 20px; margin-top: 2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--accent-green); text-transform: uppercase; letter-spacing: 2px;" data-trn="hero_subbox">
+            > SECURE_ARCHITECTURE_SPECIALIST // EST. 1998
+        </div>
+    </section>
+      
+      
+<section id="about" class="biometric-dossier">
+    <div class="section-title scramble-text" data-trn="about_title">PERSONNEL_PROFILE</div> <div class="hero-sub-box" style="align-self: flex-start; margin-bottom: 2rem; margin-top: -1.5rem; max-width: 100%;">
+    <span style="color: var(--accent-green);" data-trn="about_log_label">> LOG_LEVEL:</span> <span data-trn="about_log_value">SCANNING_DIRECTORY... [1] MATCH_FOUND</span>
+</div>
+    
+    <div class="dossier-layout">
+        <!-- Left Side: Profile Scan -->
+        <div class="profile-scanner" style="position: relative; width: 300px; height: 300px; border: 1px solid var(--primary-blue); padding: 10px;">
+            <div class="scan-line" style="position: absolute; width: 93%; height: 2px; background: var(--accent-green); box-shadow: 0 0 15px var(--accent-green); top: 0; animation: scan-anim 4s linear infinite; z-index: 5;"></div>
+            <img src="profpic.JPG" alt="Satveenraj Singh Profile" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.2); opacity: 0.7;">
+            <div style="position: absolute; bottom: -20px; left: 0; font-family: 'JetBrains Mono'; font-size: 0.6rem; color: var(--primary-blue);">UID: 98_SR_SINGH</div>
+        </div>
+
+        <!-- Right Side: Tactical Bio -->
+        <div class="bio-data" style="font-family: 'JetBrains Mono';">
+            <h2 style="color: var(--accent-green); margin-bottom: 20px;" data-trn="about_bio_id">> BIOMETRIC_ID: SATVEENRAJ_SINGH_A/L_RAJWANT_SINGH</h2>
+            <p style="font-size: 1rem; line-height: 1.8; color: var(--text-gray);" data-trn="about_bio_text">
+                Operational specialist focused on the intersection of Cyber Security and Visual Design. With a deployment history in Hamburg spanning mechanical engineering, electrical systems, and high-level policy auditing, currently optimizing core logic through Computer Security studies in Melaka.
+            </p>
+            <div class="bio-data" style="font-family: 'JetBrains Mono';">
+    <h2 style="color: var(--accent-green); margin-bottom: 20px;" data-trn="about_metadata_title">> IDENTITY_METADATA</h2>
+    
+ <!-- Personnel Metadata Grid -->
+<div class="dossier-metadata-grid">
+    
+    <!-- LEFT COLUMN: SYSTEM_IDENTIFIER -->
+    <div style="display: flex; flex-direction: column; gap: 12px; border-right: 1px solid rgba(0, 123, 255, 0.1); padding-right: 20px;">
+        <div>
+            <span style="color: var(--primary-blue);" data-trn="meta_init_label">[INITIALIZATION_DATE]:</span> 
+            <span style="color: var(--text-gray);">1998.01.05</span>
+        </div>
+        <div>
+            <span style="color: var(--primary-blue);">[VERSION_STAMP]:</span> 
+            <span style="color: var(--text-gray);">28_YRS</span>
+        </div>
+      <div>
+            <span style="color: var(--primary-blue);">[CORE_TRAINING]:</span> 
+            <span style="color: var(--text-gray);">COMPUTER_SECURITY</span>
+        </div>
+      <div>
+            <span style="color: var(--primary-blue);">[OPERATIONAL_WING]:</span> 
+            <span style="color: var(--text-gray);">FAIX</span>
+        </div>
+        
+        <div>
+            <span style="color: var(--primary-blue);">[VOICE_FREQUENCY]:</span> 
+            <span style="color: var(--text-gray);">+60 162428102</span>
+        </div>
+        <div>
+            <span style="color: var(--primary-blue);">[DIRECT_UPLINK]:</span> 
+            <span style="color: var(--text-gray);">satzalicious@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: GEOGRAPHIC_NODES -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div>
+            <span style="color: var(--primary-blue);">[SOURCE_NODE]:</span> 
+            <span style="color: var(--text-gray);">KUCHING_SARAWAK</span>
+        </div>
+      <div>
+            <span style="color: var(--primary-blue);">[BASE_COMMAND_HQ]:</span> 
+            <span style="color: var(--text-gray);">TANJUNG_MALIM_PERAK</span>
+        </div>
+        <div>
+            <span style="color: var(--primary-blue);" data-trn="meta_deploy_label">[ACTIVE_DEPLOYMENT]:</span> 
+            <span style="color: var(--text-gray);">MELAKA_MALAYSIA</span>
+        </div>
+      <div>
+            <span style="color: var(--primary-blue);" data-trn="meta_nation_label">[REGIONAL_AFFILIATION]:</span> 
+            <span style="color: var(--text-gray);" data-trn="meta_nation_val">MALAYSIAN</span>
+        </div>
+        
+        <!-- Decoration to fill the space where Hamburg was -->
+        <div style="margin-top: auto; padding-top: 20px; opacity: 0.4; font-size: 0.65rem; color: var(--accent-green); letter-spacing: 1px; border-top: 1px dashed rgba(0, 255, 65, 0.2);">
+            > STATUS: ACTIVE_DUTY<br>
+            > LOC_ID: MYS_KUL_HUB<br>
+            > ENCRYPTION: AES_256_LOCKED
+        </div>
+    </div>
+</div>
+</section>
+
+<style>
+@keyframes scan-anim { 0% { top: 0; } 100% { top: 100%; } }
+</style>
+
+ <section id="skills" class="cockpit-hud">
+    <div class="section-title scramble-text" data-trn="skills_title">CORE_CAPABILITIES</div>
+    
+    <div class="hero-sub-box" style="align-self: flex-start; margin-bottom: 3rem; margin-top: -1.5rem; max-width: 100%;">
+        <span style="color: var(--accent-green);" data-trn="skills_lbl">> RADAR_SCAN:</span> <span data-trn="skills_desc">TOOLKITS INITIALIZED. MODULE LOADED. DETECTING COMPETENCIES... SYSTEM_CHECK: OPTIMAL.</span>
+    </div>
+
+    <div class="instrument-grid">
+        <!-- Instrument 01: Technical Protocols (Radar Scope) -->
+<div class="instrument-box">
+    <div class="instrument-header" data-trn="skills_hud_01">[01] OPERATIONAL_AWARENESS</div>
+    
+    <div class="radar-scope-circular">
+        <!-- Conic sweeping background radar line -->
+        <div class="radar-sweep"></div>
+        
+        <!-- Radar Grid concentric visual lines -->
+        <div class="radar-grid-circle inner"></div>
+        <div class="radar-grid-circle middle"></div>
+        <div class="radar-grid-circle outer"></div>
+        <div class="radar-grid-line-v"></div>
+        <div class="radar-grid-line-h"></div>
+        
+        <!-- CENTRAL RADAR CORE (Diagnostic Display) -->
+        <div class="radar-core-node">
+            <div id="radar-core-label" class="scramble-text" data-original="CORE.sys">CORE.sys</div>
+            <div id="radar-core-readout" style="font-size: 0.7rem; color: var(--accent-green); margin-top: 4px;">SECURE</div>
+        </div>
+
+        <!-- INNER ORBIT (Clockwise - C, C++, MIPS) - Radius 60px -->
+        <div class="orbiting-wrapper inner-orbit" style="--duration: 21s; --orbit-radius: 60px; --direction: normal;">
+            <!-- C -->
+            <div class="skill-node-orbit" style="--delay: 0s; --brand-color: #A8B9CC;" data-label="C_CORE.sys" data-val="88" data-unit="GHz">
+                <img src="https://cdn.simpleicons.org/c/A8B9CC" alt="C" class="icon-glow">
+            </div>
+            <!-- C++ -->
+            <div class="skill-node-orbit" style="--delay: -7s; --brand-color: #00599C;" data-label="C_CPP.sys" data-val="85" data-unit="GHz">
+                <img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="C++" class="icon-glow">
+            </div>
+            <!-- MIPS -->
+            <div class="skill-node-orbit" style="--delay: -14s; --brand-color: #FF5555;" data-label="MIPS_ASM.cpu" data-val="70" data-unit="RISC">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="icon-glow" style="width: 22px; height: 22px; color: #FF5555; animation: counter-orbit 21s linear infinite; animation-delay: -14s;">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- MIDDLE ORBIT (Counter-Clockwise - Python, HTML, JS) - Radius 100px -->
+        <div class="orbiting-wrapper middle-orbit" style="--duration: 27s; --orbit-radius: 100px; --direction: reverse;">
+            <!-- Python -->
+            <div class="skill-node-orbit" style="--delay: 0s; --brand-color: #3776AB;" data-label="PY_CORE.exe" data-val="92" data-unit="THR">
+                <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" class="icon-glow">
+            </div>
+            <!-- HTML5 -->
+            <div class="skill-node-orbit" style="--delay: -9s; --brand-color: #E34F26;" data-label="HTML_DOM.web" data-val="95" data-unit="DOM">
+                <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML" class="icon-glow">
+            </div>
+            <!-- JavaScript -->
+            <div class="skill-node-orbit" style="--delay: -18s; --brand-color: #F7DF1E;" data-label="JS_UPLINK.node" data-val="90" data-unit="OPS">
+                <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JS" class="icon-glow">
+            </div>
+        </div>
+
+        <!-- OUTER ORBIT (Clockwise - Wireshark, SQL, XAMPP) - Radius 140px -->
+        <div class="orbiting-wrapper outer-orbit" style="--duration: 33s; --orbit-radius: 140px; --direction: normal;">
+            <!-- Wireshark -->
+            <div class="skill-node-orbit" style="--delay: 0s; --brand-color: #167EBE;" data-label="WIRE_SHARK.cap" data-val="75" data-unit="PKT">
+                <img src="https://cdn.simpleicons.org/wireshark/167EBE" alt="Wireshark" class="icon-glow">
+            </div>
+            <!-- SQL (MySQL) -->
+            <div class="skill-node-orbit" style="--delay: -11s; --brand-color: #4479A1;" data-label="MYSQL_DB.query" data-val="82" data-unit="QL">
+                <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" class="icon-glow">
+            </div>
+            <!-- XAMPP -->
+            <div class="skill-node-orbit" style="--delay: -22s; --brand-color: #FB7A24;" data-label="XAMPP_ENV.srv" data-val="78" data-unit="SRV">
+                <img src="https://cdn.simpleicons.org/xampp/FB7A24" alt="XAMPP" class="icon-glow">
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Instrument 02: Creative Engine (Adobe) -->
+<div class="skill-module">
+            <div class="module-header" data-trn="skills_hud_02">[02] CREATIVE_ENGINE_CONFIDENCE</div> <!-- Blender -->
+
+<div class="skill-item">
+            <div class="skill-info" style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://cdn.simpleicons.org/blender/F5792A" alt="Blender" class="icon-glow" style="width: 20px; height: 20px;">
+                <span>BLENDER</span>
+                <span style="margin-left: auto;">55%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 55%; background: var(--accent-green);"></div></div>
+        </div>
+
+<div class="skill-item">
+            <div class="skill-info" style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1280px-Adobe_Photoshop_CC_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20200616073617" alt="Adobe Photoshop" class="icon-glow" style="width: 20px; height: 20px;">
+                <span>ADOBE_PHOTOSHOP</span>
+                <span style="margin-left: auto;">90%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 90%; background: var(--accent-green);"></div></div>
+        </div>
+
+<div class="skill-item">
+            <div class="skill-info" style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/960px-Adobe_Illustrator_CC_icon.svg.png" alt="Adobe Illustrator" class="icon-glow" style="width: 20px; height: 20px;">
+                <span>ADOBE_ILLUSTRATOR</span>
+                <span style="margin-left: auto;">60%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 60%; background: var(--accent-green);"></div></div>
+        </div>
+
+<div class="skill-item">
+            <div class="skill-info" style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Adobe_Premiere_Pro_CC_2026_icon.svg/960px-Adobe_Premiere_Pro_CC_2026_icon.svg.png" alt="Adobe Premier Pro" class="icon-glow" style="width: 20px; height: 20px;">
+                <span>ADOBE_PREMIER_PRO</span>
+                <span style="margin-left: auto;">75%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 75%; background: var(--accent-green);"></div></div>
+        </div>
+          
+ <div class="skill-item">
+            <div class="skill-info" style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Adobe_Audition_CC_2026_icon.svg/960px-Adobe_Audition_CC_2026_icon.svg.png" alt="Adobe Audition" class="icon-glow" style="width: 20px; height: 20px;">
+                <span>ADOBE_AUDITION</span>
+                <span style="margin-left: auto;">85%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 85%; background: var(--accent-green);"></div></div>
+        </div>
+
+<div class="skill-item">
+            <div class="skill-info" style="display: flex; align-items: center; gap: 10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Adobe_Animate_CC_icon_%282020%29.svg/960px-Adobe_Animate_CC_icon_%282020%29.svg.png" alt="Adobe Animate" class="icon-glow" style="width: 20px; height: 20px;">
+                <span>ADOBE_ANIMATE</span>
+                <span style="margin-left: auto;">40%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 40%; background: var(--accent-green);"></div></div>
+        </div>
+      </div>
+
+
+
+        <!-- Instrument 03: Communication Frequencies (Languages) -->
+        <div class="instrument-box">
+            <div class="instrument-header" data-trn="skills_hud_03">[03] COMMUNICATION_FREQUENCIES</div>
+            <div class="lang-comms">
+                <div class="comm-channel">
+                    <div class="flag-circle"><img src="https://flagcdn.com/gb.svg" alt="UK"></div>
+                    <div class="wave-info">
+                        <span class="freq">ENGLISH 121.5 MHz</span>
+                        <span class="lang-name" data-trn="lang_en_desc">Zero-Latency Execution. </span> 
+                    </div>
+                </div>
+                <div class="comm-channel">
+                    <div class="flag-circle"><img src="https://flagcdn.com/de.svg" alt="DE"></div>
+                    <div class="wave-info">
+                        <span class="freq">GERMAN 118.7 MHz</span> 
+                        <span class="lang-name" data-trn="lang_de_desc">Core Integration Module.</span> 
+                    </div>
+                </div>
+                <div class="comm-channel">
+                    <div class="flag-circle"><img src="https://flagcdn.com/my.svg" alt="MY"></div>
+                    <div class="wave-info">
+                        <span class="freq">MALAY 132.1 MHz</span> 
+                        <span class="lang-name" data-trn="lang_ms_desc">High Bandwidth Performance. </span>
+                    </div>
+                </div> <!-- Chinese Channel -->
+<div class="comm-channel">
+    <div class="flag-circle"><img src="https://flagcdn.com/cn.svg" alt="CN"></div>
+    <div class="wave-info">
+        <span class="freq">CHINESE 141.9 MHz</span> 
+        <span class="lang-name" data-trn="lang_zh_desc">Basic Handshake Capability. </span> 
+    </div>
+</div>
+
+<!-- Punjabi Channel -->
+<div class="comm-channel">
+    <div class="flag-circle"><img src="https://flagcdn.com/pk.svg" alt="PK"></div>
+    <div class="wave-info">
+        <span class="freq">PUNJABI 145.2 MHz</span> 
+        <span class="lang-name" data-trn="lang_pa_desc">Limited Interception Available.</span> <br> <br>
+       <a href="https://drive.google.com/drive/folders/1e2mKuek0T4Zw4R26UWc7kCCm9bNESyK5?usp=sharing" target="_blank" class="proof-link" data-trn="validate_credentials_btn">
+        [VALIDATE_CREDENTIALS]
+    </a>
+    </div>
+ 
+</div>
+            </div>  
+
+        </div>
+    </div>
+    </div>
+</section>
+   <section id="telemetry" class="tactical-monitor">
+       <div class="monitor-grid">
+        <div class="monitor-feed">
+            <div class="feed-header"><span class="blink-red">●</span> LIVE_FEED_01 // TRK_098</div>
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline class="asset-video">
+                    <source src="airplane 1.mp4" type="video/mp4">
+                </video>
+                <div class="scan-overlay"></div>
+            </div>
+            <div class="feed-footer">ASSET: WFR_01 // STAT: ACTIVE</div>
+        </div>
+
+        <div class="monitor-feed">
+            <div class="feed-header"><span class="blink-red">●</span> LIVE_FEED_02 // TRK_099</div>
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline class="asset-video">
+                    <source src="airplane 2.mp4" type="video/mp4">
+                </video>
+                <div class="scan-overlay"></div>
+            </div>
+            <div class="feed-footer">ASSET: WFR_02 // STAT: ACTIVE</div>
+        </div>
+
+        <div class="monitor-feed">
+            <div class="feed-header"><span class="blink-red">●</span> LIVE_FEED_03 // TRK_100</div>
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline class="asset-video">
+                    <source src="airplane 3.mp4" type="video/mp4">
+                </video>
+                <div class="scan-overlay"></div>
+            </div>
+            <div class="feed-footer">ASSET: WFR_03 // STAT: ACTIVE</div>
+        </div>
+    </div>
+</section>
+        <section id="experience" class="career-timeline">
+            <div class="section-title scramble-text" data-trn="exp_title">DEPLOYMENT_HISTORY</div>
+
+            <div class="hero-sub-box" style="align-self: flex-start; margin-bottom: 3rem; margin-top: -1.5rem; max-width: 100%;">
+                <span style="color: var(--accent-green);" data-trn="exp_lbl">> STATUS: </span> <span data-trn="exp_desc">EXECUTING REAL-WORLD SYSTEMS UNDER OPERATIONAL CONSTRAINTS...</span>
+            </div>
+            <div class="content-grid">
+                <div class="education-split-layout" style="display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start; margin-top: 2rem;">
+    
+    <!-- LEFT COLUMN: WORK LOCATIONS -->
+    <div class="glass-card" style="position: relative; overflow: hidden; margin: 0;">
+        <div class="module-tag" style="margin-bottom: 15px;">
+            <span class="status-dot" style="display: inline-block; width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; margin-right: 8px; box-shadow: 0 0 8px var(--accent-green);"></span>
+             <span data-trn="exp_allianz_status">NODE_STATUS: LEGACY_ARCHIVE</span>
+        </div>
+
+        <span class="card-label">Allianz Trade // 2022 - 2024</span>
+        <h3 data-trn="exp_allianz_title">Policy Auditor</h3>
+        <p data-trn="exp_allianz_desc">Assisted in managing and supporting insurance policy processes, handling administrative tasks, and contributing to operations within the company’s policy management division.</p>
+        
+       
+        <div style="margin-top: 15px; font-family: 'JetBrains Mono'; font-size: 1.0rem; color: var(--primary-blue); opacity: 0.8;">
+            <span style="color: var(--accent-green);">📍</span> Gasstraße, Hamburg
+
+        </div>
+
+        <div class="dossier-btn-wrapper">
+            <a href="https://drive.google.com/file/d/1opbm-yxCPJT90hoG7wpaWOuHnEF31qNg/view?usp=sharing" target="_blank" class="proof-link" style="display: block; text-align: center;" data-trn="verify_clearance">
+                [VERIFY_CLEARANCE]
+            </a>
+        </div>
+    </div>
+
+    <!-- Allianz Image-->
+
+    <div class="side-visual" style="position: sticky; top: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="padding: 10px; border: 1px solid var(--primary-blue); background: rgba(0, 123, 255, 0.05); position: relative; width: 100%;">
+            <!-- Scanning Animation Line -->
+            <div style="position: absolute; width: 100%; height: 2px; background: var(--accent-green); top: 0; left: 0; box-shadow: 0 0 10px var(--accent-green); animation: scan-line 4s linear infinite; z-index: 2;"></div>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Allianz-logo.png/1920px-Allianz-logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20230102112209" 
+                 alt="Allianz" 
+                 style="width: 100%; height: auto; filter: grayscale(0.3) brightness(1.1);">
+            
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--primary-blue); text-align: center; border-top: 1px dashed rgba(0, 123, 255, 0.3); padding-top: 5px;">
+                ASSET_ID: ALLIANZ_TRADE_REF
+            </div>
+        </div>
+    </div>
+</div>
+              
+        <!-- FRANK HöHLE -->
+                <div class="education-split-layout" style="display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start; margin-top: 2rem;">
+    
+    <!-- LEFT COLUMN: CONTENT CARD -->
+    <div class="glass-card" style="position: relative; overflow: hidden; margin: 0;">
+        <div class="confidential-stamp" data-trn="exp_hoehle_status">DECLASSIFIED</div>
+        
+        <span class="card-label">Frank Höhle // 2020 - 2022</span>
+        <h3 data-trn="exp_hoehle_title">Junior Mechanic</h3>
+        <p data-trn="exp_hoehle_desc">Performed precision workshop operations including measuring, sawing, drilling, and on-site repair of steel structures, supporting welding and machining workflows.</p>
+
+        
+
+        <div style="margin-top: 15px; font-family: 'JetBrains Mono'; font-size: 1.0rem; color: var(--primary-blue); opacity: 0.8;">
+            <span style="color: var(--accent-green);">📍</span> Longerich, Köln
+        </div>
+
+        <div class="dossier-btn-wrapper">
+            <a href="https://drive.google.com/file/d/1hzRCBKa2RscamqHswD86im1VI7sz6Via/view?usp=sharing" target="_blank" class="proof-link" style="display: block; text-align: center;" data-trn="verify_clearance">
+                [VERIFY_CLEARANCE]
+            </a>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: SIDE VISUAL -->
+  <div class="side-visual" style="position: sticky; top: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    
+    <div style="padding: 15px; border: 1px solid var(--primary-blue); background: rgba(0, 123, 255, 0.05); position: relative; width: 100%; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px;">
+        
+        <div style="position: absolute; width: 100%; height: 2px; background: var(--accent-green); top: 0; left: 0; box-shadow: 0 0 10px var(--accent-green); animation: scan-line 4s linear infinite; z-index: 2;"></div>
+        
+        <img src="https://drive.google.com/thumbnail?id=1bRhO056jkcqkPySG1sooMySpgBMxmyGK&sz=w1000" 
+             alt="FRANK HÖHLE" 
+             style="width: 70%; height: auto; filter: grayscale(0.5) brightness(1.2); display: block;">
+
+        <div style="margin-top: 10px; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--primary-blue); text-align: center; border-top: 1px dashed rgba(0, 123, 255, 0.3); padding-top: 8px; width: 80%;">
+            ASSET_ID: FRANK_HÖHLE_REF
+        </div>
+        
+    </div>
+</div>
+</div>
+            <div class="education-split-layout" style="display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start; margin-top: 2rem;">
+    
+    <div class="glass-card" style="position: relative; overflow: hidden; margin: 0;">
+        <div class="confidential-stamp" data-trn="exp_beeck_status">STRICTLY_CONFIDENTIAL</div>
+        
+        <span class="card-label">Elektro von der Beeck // 2018 - 2020</span>
+<h3 data-trn="exp_beeck_title">Junior Electrician</h3>        
+<p data-trn="exp_beeck_desc">Worked as an electrician performing installations in old and new buildings, maintaining lighting and intercom systems, setting up data networks, and conducting technical safety measurements according to VDE and DGUV regulations.</p>
+
+      
+
+        <div style="margin-top: 15px; font-family: 'JetBrains Mono'; font-size: 1.0rem; color: var(--primary-blue); opacity: 0.8;">
+            <span style="color: var(--accent-green);">📍</span> Niehl-Süd, Köln
+        </div>
+
+        <div class="dossier-btn-wrapper">
+            <a href="https://drive.google.com/file/d/1gpZS4W1PzB5ZkzhfmrJqu3ntNEThgfp1/view?usp=sharing" target="_blank" class="proof-link" style="display: block; text-align: center;" data-trn="exp_beeck_btn">
+                [ACCESS_VALIDATION]
+            </a>
+        </div>
+    </div>
+
+    <div class="side-visual" style="position: sticky; top: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="padding: 10px; border: 1px solid var(--primary-blue); background: rgba(0, 123, 255, 0.05); position: relative; width: 100%;">
+            <div style="position: absolute; width: 100%; height: 2px; background: var(--accent-green); top: 0; left: 0; box-shadow: 0 0 10px var(--accent-green); animation: scan-line 4s linear infinite; z-index: 2;"></div>
+            
+            <img src="https://www.kundengewinnung-fuer-elektriker.de/media/config/theme/layout/include/start_modules/customers/vonderbeeck.png" 
+                 alt="EVDB" 
+                 style="width: 100%; height: auto; filter: grayscale(0.5) brightness(1.2);">
+            
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--primary-blue); text-align: center; border-top: 1px dashed rgba(0, 123, 255, 0.3); padding-top: 5px;">
+                ASSET_ID: ELEKTRO_VON_DER_BEECK_REF
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-title scramble-text" data-trn="edu_title">KNOWLEDGE_BASE</div>
+            
+            <div class="hero-sub-box" style="align-self: flex-start; margin-bottom: 3rem; margin-top: -1.5rem; max-width: 100%;">
+                <span style="color: var(--accent-green);" data-trn="edu_lbl">> SYSTEM_SPECS:</span> <span data-trn="edu_desc">ACQUIRING MULTIDISCIPLINARY FOUNDATIONS IN SECURE COMPUTING FOLLOWING ANALYTICAL LOGIC.</span>
+            </div>
+            <div class="content-grid">
+                <div class="education-split-layout" style="display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start; margin-top: 2rem;">
+    
+    <!-- LEFT COLUMN: ACTIVE ENROLLMENT DATA -->
+    <div class="glass-card" style="position: relative; overflow: hidden; margin: 0;">
+        <div class="module-tag" style="margin-bottom: 15px;">
+            <span class="status-dot" style="display: inline-block; width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; margin-right: 8px; box-shadow: 0 0 8px var(--accent-green);"></span>
+            <span data-trn="edu_utem_status">CURRENT_OBJECTIVE: INTEL_GATHERING_IN_PROGRESS</span>
+        </div>
+
+        <span class="card-label">Universiti Teknikal Melaka Malaysia // <br>2025 - PRES</span>
+        <h3 data-trn="edu_utem_title">B.Sc. Computer Security</h3>
+        <p data-trn="edu_utem_desc">Specializing in computer security and network analysis with special interests in website and software design.</p>
+        
+        <!-- Progress Bar for Degree Completion -->
+        <div class="diagnostic-container">
+    <div class="diag-module">
+        <div class="diag-header text-logic">
+            <span data-trn="edu_utem_prog">[PROG: DEGREE_ACQUISITION]</span>
+            <span>25%</span>
+        </div>
+        <div class="diag-bar-track">
+            <div class="diag-bar-fill bg-logic" style="width: 25%;"></div>
+        </div>
+    </div>
+</div>
+        <div style="margin-top: 15px; font-family: 'JetBrains Mono'; font-size: 1.0rem; color: var(--primary-blue); opacity: 0.8;">
+            <span style="color: var(--accent-green);">📍</span> Melaka, Malaysia
+        </div>
+
+        <div class="dossier-btn-wrapper">
+            <a href="#" class="proof-link" style="display: block; text-align: center;" data-trn="verify_clearance">
+                [VERIFY_CLEARANCE]
+            </a>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: UTeM VISUAL -->
+    <div class="side-visual" style="position: sticky; top: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="padding: 10px; border: 1px solid var(--primary-blue); background: rgba(0, 123, 255, 0.05); position: relative; width: 100%;">
+            <!-- Scanning Animation Line -->
+            <div style="position: absolute; width: 100%; height: 2px; background: var(--accent-green); top: 0; left: 0; box-shadow: 0 0 10px var(--accent-green); animation: scan-line 4s linear infinite; z-index: 2;"></div>
+            
+            <img src="https://vectorise.net/logo/wp-content/uploads/2017/08/Logo-Universiti-Teknikal-Malaysia-Melaka-UTeM-Jawi-new.png" 
+                 alt="UTeM" 
+                 style="width: 100%; height: auto; filter: grayscale(0.3) brightness(1.1);">
+            
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--primary-blue); text-align: center; border-top: 1px dashed rgba(0, 123, 255, 0.3); padding-top: 5px;">
+                ASSET_ID: UTEM_SECURITY_REF
+            </div>
+        </div>
+    </div>
+</div>
+              
+              
+                <div class="education-split-layout" style="display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start; margin-top: 2rem;">
+    
+    <!-- LEFT COLUMN: CONTENT CARD -->
+    <div class="glass-card" style="position: relative; overflow: hidden; margin: 0;">
+        <div class="confidential-stamp" data-trn="edu_fcuc_status">TOP_SECRET</div>
+        
+        <span class="card-label">First City University College // 2016 - 2017</span>
+        <h3 data-trn="edu_fcuc_title">Foundational Studies</h3>
+        <p data-trn="edu_fcuc_desc">Graduated with an Australian Tertiary Admission Rank (ATAR) of 93.9, reflecting understanding of Science and Mathematical fundamentals. Achieved Western Australian Certificate of Education (WACE).</p>
+
+        <!-- Optional: Diagnostic Modules (matching your SMK style) -->
+        <div class="diagnostic-container">
+            <div class="diag-module">
+                <div class="diag-header text-comm">
+                    <span data-trn="edu_fcuc_prog">[INTEL: ACADEMIC_RANK]</span>
+                    <span>ATAR 93.9</span>
+                </div>
+                <div class="diag-bar-track">
+                    <div class="diag-bar-fill bg-comm" style="width: 93.9%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px; font-family: 'JetBrains Mono'; font-size: 1.0rem; color: var(--primary-blue); opacity: 0.8;">
+            <span style="color: var(--accent-green);">📍</span> Bandar Utama, Damansara
+        </div>
+
+        <div class="dossier-btn-wrapper">
+            <a href="https://drive.google.com/drive/folders/15uSf4v9et4lw3HJDUPxIT5foOai2YGE5?usp=sharing" target="_blank" class="proof-link" style="display: block; text-align: center;" data-trn="verify_clearance">
+                [VERIFY_CLEARANCE]
+            </a>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: SIDE VISUAL -->
+    <div class="side-visual" style="position: sticky; top: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="padding: 10px; border: 1px solid var(--primary-blue); background: rgba(0, 123, 255, 0.05); position: relative; width: 100%;">
+            <!-- Scanning Animation Line -->
+            <div style="position: absolute; width: 100%; height: 2px; background: var(--accent-green); top: 0; left: 0; box-shadow: 0 0 10px var(--accent-green); animation: scan-line 4s linear infinite; z-index: 2;"></div>
+            
+            <!-- Replace the src with the First City UC Logo -->
+            <img src="https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/20/207762_205827_institute_logo-FCUC-Logo-Combine-PNG.png" 
+                 alt="First City University College" 
+                 style="width: 100%; height: auto; filter: grayscale(0.5) brightness(1.2);">
+            
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--primary-blue); text-align: center; border-top: 1px dashed rgba(0, 123, 255, 0.3); padding-top: 5px;">
+                ASSET_ID: FCUC_FOUNDATION_REF
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="education-split-layout" style="display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: start; margin-top: 2rem;">
+    
+    <div class="glass-card" style="position: relative; overflow: hidden; margin: 0;">
+        <div class="confidential-stamp" data-trn="edu_smk_status">STRICTLY_CONFIDENTIAL</div>
+        
+        <span class="card-label">SMK Sungai Tapang // 2011 - 2015</span>
+        <h3 data-trn="edu_smk_title">Secondary Education</h3>
+        <p data-trn="edu_smk_desc">Comprehensive asset evaluation for the period 2011-2015.</p>
+
+        <div class="diagnostic-container">
+            <div class="diag-module">
+                <div class="diag-header text-logic">
+                    <span data-trn="edu_smk_prog_logic">[INTEL: LOGIC_PROCESSING]</span>
+                    <span>98.2%</span>
+                </div>
+                <div class="diag-bar-track">
+                    <div class="diag-bar-fill bg-logic" style="width: 98%;"></div>
+                </div>
+                <div class="diag-data-list border-logic">
+                    <p>
+                        🏆 7A+/2A [SPM_CLEARED] <br>
+                        🏆 YOUNG_SCIENTIST [2ND_PLACE]
+                    </p>
+                </div>
+            </div>
+
+            <div class="diag-module">
+                <div class="diag-header text-comm">
+                    <span data-trn="edu_smk_prog_comm">[INTEL: COMMUNICATION_PROTOCOLS]</span>
+                    <span>94.7%</span>
+                </div>
+                <div class="diag-bar-track">
+                    <div class="diag-bar-fill bg-comm" style="width: 94%;"></div>
+                </div>
+                <div class="diag-data-list border-comm">
+                    <p>
+                        🏆 ENGLISH_DRAMA [1ST_PLACE] <br>
+                        🏆 PARLIAMENTARY_STYLE_STATE_LEVEL_DEBATE [4TH_PLACE]
+                    </p>
+                </div>
+            </div>
+
+            <div class="diag-module">
+                <div class="diag-header text-field">
+                    <span data-trn="edu_smk_prog_field">[INTEL: FIELD_OPERATIONS]</span>
+                    <span>90.1%</span>
+                </div>
+                <div class="diag-bar-track">
+                    <div class="diag-bar-fill bg-field" style="width: 90%;"></div>
+                </div>
+                <div class="diag-data-list border-field">
+                    <p>
+                        🏆 TENNIS_SAMARAHAN [2ND_PLACE] <br>
+                        👮 POLICE_CADET_CORPS [BEST_CONTINGENT]
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px; font-family: 'JetBrains Mono'; font-size: 1.0rem; color: var(--primary-blue); opacity: 0.8;">
+            <span style="color: var(--accent-green);">📍</span> Kuching, Sarawak
+        </div>
+
+        <div class="dossier-btn-wrapper">
+            <a href="https://drive.google.com/drive/folders/1ABDfEoKuQOmG2_ezSrKH9N3Xn4blQjuG?usp=sharing" target="_blank" class="proof-link" style="display: block; text-align: center;" data-trn="edu_smk_btn">
+                [DECRYPT_FULL_VALIDATION_ASSETS]
+            </a>
+        </div>
+    </div>
+
+    <div class="side-visual" style="position: sticky; top: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="padding: 10px; border: 1px solid var(--primary-blue); background: rgba(0, 123, 255, 0.05); position: relative; width: 100%;">
+            <div style="position: absolute; width: 100%; height: 2px; background: var(--accent-green); top: 0; left: 0; box-shadow: 0 0 10px var(--accent-green); animation: scan-line 4s linear infinite; z-index: 2;"></div>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/ms/2/2b/Lencana_Sekolah_Menengah_Kebangsaan_Sungai_Tapang.gif" 
+                 alt="SMK Sungai Tapang" 
+                 style="width: 100%; height: auto; filter: grayscale(0.5) brightness(1.2);">
+            
+            <div style="margin-top: 10px; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--primary-blue); text-align: center; border-top: 1px dashed rgba(0, 123, 255, 0.3); padding-top: 5px;">
+                ASSET_ID: SMKST_LOGO_REF
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <div class="section-title scramble-text" data-trn="proj_title">WORK_PRODUCED</div>
+            
+            <div class="hero-sub-box" style="align-self: flex-start; margin-bottom: 3rem; margin-top: -1.5rem; max-width: 100%;">
+                <span style="color: var(--accent-green);" data-trn="proj_lbl">> LOG_ANALYSIS: </span> <span data-trn="proj_desc">AUDITING LAB TESTBEDS, SIMULATION ENVIRONMENTS, AND REFACTORING PROJECTS COMPLETED AT THE UNIVERSITY.</span>
+            </div>
+            <div class="content-grid">
+              <div class="glass-card">
+                    <span class="card-label">CLOUD_SANDBOX_OVERLORD</span>
+                    <h3 data-trn="proj_range_title">Cybersecurity Range Lab</h3>
+                    <p data-trn="proj_range_desc">Designed and engineered a multi-node virtualization testbed utilizing isolated subnets to safely simulate and audit network intrusions, vulnerability analysis, and active firewall policy verification.</p> <a href="https://drive.google.com/file/d/1oaONanoNaZtlyUlzt9SuMwzAhkLbrgcw/view?usp=sharing" target="_blank" class="proof-link" data-trn="proj_btn">
+
+        [INTEGRITY_CHECK]
+
+    </a>
+                </div>
+              <div class="glass-card">
+                    <span class="card-label">TELEMETRY_ALARM_CENTRAL</span>
+                    <h3 data-trn="proj_monitor_title">Active Host Monitor</h3>
+                    <p data-trn="proj_monitor_desc">Built a lightweight Python daemon that monitors system security parameters, parses active network listening socket handshakes, and logs access attempts dynamically to terminal nodes.</p>  <a href="https://drive.google.com/file/d/1U6atK5vTrAiO4TON6uuLJaDJhHYV9wc5/view?usp=sharing" target="_blank" class="proof-link" data-trn="proj_btn">
+
+        [INTEGRITY_CHECK]
+
+    </a>
+                </div>
+                <div class="glass-card">
+                    <span class="card-label">VECTOR_RECON_SCANNER</span>
+                    <h3 data-trn="proj_audit_title">Web Audit Suite</h3>
+                    <p data-trn="proj_audit_desc">Developed a modular automated visual dashboard for querying insecure site headers, tracking cross-origin requests, and logging certificate handshake authenticity protocols.</p>  <a href="https://drive.google.com/file/d/1oxoysAsZe8YVfNwLkHrINdO2vbo3uM3M/view?usp=sharing" target="_blank" class="proof-link" data-trn="proj_btn">
+
+        [INTEGRITY_CHECK]
+
+    </a>
+                </div>
+        </section>
+
+        <section id="summary" style="margin-top: 4rem; margin-bottom: 5rem;">
+            <div class="section-title scramble-text" data-trn="summary_title">OPERATIONAL_SUMMARY</div>
+            <div class="hero-sub-box" style="align-self: flex-start; margin-bottom: 3rem; margin-top: -1.5rem; max-width: 100%;">
+                <span style="color: var(--accent-green);" data-trn="summary_overview_label">> COMPREHENSIVE_OVERVIEW:</span> <span data-trn="summary_overview">CONSOLIDATED DOSSIER RECORDS AND MISSION-CRITICAL FOCUS POINTS.</span>
+            </div>
+            
+            <div class="dossier-layout" style="align-items: stretch;">
+                <!-- Left Column: Holographic 3D Tilt Card -->
+                <div class="profile-card-container">
+                    <div class="tilt-profile-card">
+                        <div class="tilt-profile-card-content">
+                            <div class="tilt-avatar-wrapper">
+                                <img src="profpic.JPG" alt="Satveenraj Singh">
+                                <div class="status-pill">
+                                    <span class="status-pill-dot"></span>
+                                    <span data-trn="summary_card_status">SECURE</span>
+                                </div>
+                            </div>
+                            <h4 class="tilt-name">Satveenraj Singh</h4>
+                            <span class="tilt-handle">@satveenraj_singh</span>
+                            <span class="tilt-title" data-trn="summary_card_title">SECURE SYSTEM SPECIALIST</span>
+                            <p class="tilt-summary" data-trn="summary_card_desc">
+                                Designing high-security computing boundaries and resilient cyber architectures through academic study and workshop deployment.
+                            </p>
+                            <a href="#contact" class="tilt-btn" data-trn="summary_card_btn">[INITIATE_HANDSHAKE]</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Final summary / mission details -->
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
+                    <span class="card-label" data-trn="summary_focus_label">MISSION_CRITICAL_FOCUS</span>
+                    <h3 style="margin-bottom: 1.5rem;" data-trn="summary_focus_h3">Core Architecture & Passion</h3>
+                    
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.8; color: var(--text-gray); display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <span style="color: var(--accent-green);" data-trn="summary_focus_p1_lbl">> CURRENT_PASSION:</span> <br>
+                            <span data-trn="summary_focus_p1">Constructing isolated network testbeds, simulated virtualization sandboxes, and bridging deep technical protocols with smooth visual design layouts.</span>
+                        </div>
+                        <div>
+                            <span style="color: var(--accent-green);" data-trn="summary_focus_p2_lbl">> OPERATIONAL_MINDSET:</span> <br>
+                            <span data-trn="summary_focus_p2">"Security is not merely a set of rules—it is a continuous architecture. My objective is to minimize vulnerabilities, automate verification systems, and deploy clean zero-tolerance threat-prevention platforms."</span>
+                        </div>
+                        <div>
+                            <span style="color: var(--accent-green);" data-trn="summary_focus_p3_lbl">> HAMBURG & MELAKA SYNERGY:</span> <br>
+                            <span data-trn="summary_focus_p3">Leveraging hands-on mechanical workshop precision and industrial electrical diagnostics gained in Germany with high-level academic computer security theory in Malaysia.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-title scramble-text" data-trn="contact_title">ESTABLISH_CONNECTION</div> 
+            <div class="hero-sub-box" style="align-self: flex-start; margin-bottom: 3rem; margin-top: -1.5rem; max-width: 100%;">
+                <span style="color: var(--accent-green);" data-trn="contact_lbl">> SIGNAL_STRENGTH:</span> <span data-trn="contact_desc">NOMINAL. READY TO DISCUSS SECURE ARCHITECTURE OR FUTURE COLLABORATIONS.</span>
+            </div>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control close"></span>
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                    </div>
+                    <div class="terminal-title">ENCRYPTED_SESSION.exe</div>
+                </div>
+                <form class="terminal-body" id="contactForm">
+                    <div class="command-line">
+                        <span class="prompt">$</span> initiate_handshake <span class="parameter">--secure --urgent</span>
+                    </div>
+                    <div class="input-group">
+                        <label data-trn="contact_form_identity">SENDER_IDENTITY</label>
+                        <input type="text" placeholder="Enter name..." required data-trn="contact_placeholder_name">
+                    </div>
+                    <div class="input-group">
+                        <label data-trn="contact_form_email">RETURN_PATH_EMAIL</label>
+                        <input type="email" placeholder="address@protocol.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label data-trn="contact_form_data">TRANSMISSION_DATA</label>
+                        <textarea placeholder="Type your message here..." rows="3" id="messageInput" data-trn="contact_placeholder_msg"></textarea>
+                    </div>
+                    <div class="terminal-footer">
+                        <button type="submit" class="send-btn" data-trn="contact_form_btn">Transmit Packet</button>
+                        <div class="status-text"><span data-trn="contact_form_status_lbl">STATUS: </span><span class="blink" id="terminalStatus" data-trn="contact_form_awaiting">AWAITING_INPUT...</span></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>
+      
+      <section class="ops-center">
+    <div class="glass-card terminal-box">
+        <div class="card-header">
+            <span>[TERMINAL_ACCESS // SYS_DECK]</span>
+            <span class="status-tag online">
+                <span class="status-dot-pulse"></span> ONLINE
+            </span>
+        </div>
+        <div id="terminal-output">Type 'help' to begin...</div>
+        <div class="input-line">
+            <span class="prompt">></span>
+            <input type="text" id="terminal-input" autofocus spellcheck="false">
+            <span class="cursor-blink">_</span>
+        </div>
+    </div>
+
+    <div class="glass-card logs-box">
+        <div class="card-header">
+            <span>[LIVE_SYSTEM_LOGS // SYSLOG_TRK_098]</span>
+            <span class="status-tag logging">
+                <span class="status-dot-pulse"></span> LOGGING
+            </span>
+        </div>
+        <div id="log-container">
+            <div class="log-entry">[OK] Firewall Rules Loaded...</div>
+            <div class="log-entry">[INFO] Port 80, 443 listening...</div>
+        </div>
+    </div>
+
+    <div class="glass-card physics-box" style="min-height: 220px; display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="card-header">
+            <span>[NODE_PHYSICS_COLLISION_FEED // SIM_ACTIVE]</span>
+            <span class="status-tag active-sim">
+                <span class="status-spinner-char">/</span> ACTIVE
+            </span>
+        </div>
+        <div style="flex-grow: 1; position: relative; width: 100%; height: 100%; min-height: 150px; overflow: hidden; background: rgba(0, 0, 0, 0.2); border-radius: 4px;">
+            <canvas id="physics-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block;"></canvas>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="telemetry-bar">
+            <div class="data-block">
+                <span class="data-label">ORIGIN // DEU</span>
+                <span class="data-value">
+                    <svg class="hamburg-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path class="globe-line" d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                    HAMBURG
+                </span>
+                <span class="data-coords">53.5511° N, 9.9937° E</span>
+                <div class="local-time-display" id="hamTime">00:00:00</div>
+            </div>
+            <div class="flight-path">
+                <div class="plane-animator">✈</div>
+            </div>
+            <div class="data-block" style="text-align: right; align-items: flex-end;">
+                <span class="data-label">DESTINATION // MYS</span>
+                <span class="data-value">KUALA LUMPUR 📍</span>
+                <span class="data-coords">3.1390° N, 101.6869° E</span>
+                <div class="local-time-display" id="kulTime">00:00:00</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="https://www.twitch.tv/satzalicious" class="glitch-text" data-value="TWITCH">TWITCH</a>
+                <a href="https://www.instagram.com/jr.swarovski/" class="glitch-text" data-value="INSTAGRAM">INSTAGRAM</a>
+                <a href="https://www.facebook.com/Satzable" class="glitch-text" data-value="FACEBOOK">FACEBOOK</a>
+                <a href="https://steamcommunity.com/id/satza/" class="glitch-text" data-value="STEAM">STEAM</a>
+                <a href="#" class="glitch-text" data-value="DISCORD">DISCORD</a>
+            </div>
+            <div class="copyright-big">[BUILD: v2.0.2.6_STABLE]</div>
+        </div>
+    </footer>
+
+    <!-- Global High-Tech Decryption Modal -->
+    <div id="dossier-modal" class="cyber-modal">
+        <div class="cyber-modal-overlay"></div>
+        <div class="cyber-modal-container">
+            <div class="cyber-modal-header">
+                <span class="cyber-modal-title">SECURE_DECRYPTOR_v4.2</span>
+                <button class="cyber-modal-close">[X_CLOSE]</button>
+            </div>
+            
+            <div class="cyber-modal-body">
+                <!-- Decryption Simulator (Active scan) -->
+                <div class="decryptor-scan-screen">
+                    <div class="scanline-overlay"></div>
+                    <div class="scanner-laser"></div>
+                    <div class="terminal-scroller">
+                        <div class="decrypt-log-line">> INITIATING ENCRYPTED LINK INTEGRATION PROTOCOL...</div>
+                        <div class="decrypt-log-line">> ACQUIRING SECURE TUNNEL TO GEOGRAPHIC DATA REPOSITORY...</div>
+                        <div class="decrypt-log-line">> BYPASSING SECURE BOUNDARIES...</div>
+                        <div class="decrypt-log-line">> EXCHANGING CRYPTOGRAPHIC SHA-256 KEYS...</div>
+                        <div class="decrypt-log-line" style="color: var(--accent-green)">> INTEGRITY VERIFIED. STATUS: OPTIMAL.</div>
+                        <div class="decrypt-log-line">> DECRYPTING CREDENTIAL DOSSIER PACKETS...</div>
+                    </div>
+                    <div class="decrypt-progress-bar">
+                        <div class="decrypt-progress-fill"></div>
+                    </div>
+                    <div class="decrypt-status-text">DECRYPTING... 0%</div>
+                </div>
+
+                <!-- Actual Decrypted Viewer Frame -->
+                <div class="decrypted-viewer-frame" style="display: none;">
+                    <div class="viewer-corner top-left">[</div>
+                    <div class="viewer-corner top-right">]</div>
+                    <div class="viewer-corner bottom-left">[</div>
+                    <div class="viewer-corner bottom-right">]</div>
+                    <div class="viewer-watermark">CLASSIFIED DOSSIER</div>
+                    
+                    <div class="dossier-scroll-area">
+                        <!-- Content gets loaded dynamically here -->
+                        <div id="modal-dossier-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Pagination Footer -->
+            <div class="cyber-modal-footer" style="display: none;">
+                <button class="gallery-nav-btn prev-btn">[PREV_ASSET]</button>
+                <span class="gallery-page-indicator">ASSET 1 OF 3</span>
+                <button class="gallery-nav-btn next-btn">[NEXT_ASSET]</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
