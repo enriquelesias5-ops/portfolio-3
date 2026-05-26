@@ -1,16 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. CUSTOM CURSOR ---
+   // --- 1. CUSTOM CURSOR (UPDATED) ---
     const cursor = document.getElementById('custom-cursor');
     if (cursor) {
         document.documentElement.classList.add('js-cursor-enabled');
+        
+        // Track movement
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
-        document.querySelectorAll('a, button, input, textarea, .proof-link').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+
+        // Dynamic hover detection (works for modal buttons too)
+        document.addEventListener('mouseover', (e) => {
+            const target = e.target;
+            const isClickable = target.closest('a, button, input, textarea, .proof-link, .gallery-nav-btn, .cyber-modal-close');
+            
+            if (isClickable) {
+                cursor.classList.add('cursor-hover');
+            } else {
+                cursor.classList.remove('cursor-hover');
+            }
         });
     }
 
@@ -55,6 +65,122 @@ document.addEventListener('DOMContentLoaded', () => {
             loader.style.setProperty('--orbit-radius', currentRadius + 'px');
         }
     }, 45);
+
+    // --- MAGIC RINGS ANIMATION (Boot Loader) ---
+    const ringsCanvas = document.getElementById('magic-rings-canvas');
+    if (ringsCanvas && loader) {
+        const rCtx = ringsCanvas.getContext('2d');
+        let rW, rH;
+
+        function resizeRings() {
+            rW = ringsCanvas.width = loader.clientWidth;
+            rH = ringsCanvas.height = loader.clientHeight;
+        }
+        resizeRings();
+        window.addEventListener('resize', resizeRings);
+
+        const ringCount = 6;
+        const baseRadius = 80;
+        const radiusStep = 45;
+        const maxLife = 3.5; // seconds per ring cycle
+        const speed = 0.8;
+
+        // Each ring has a phase offset so they stagger
+        const rings = [];
+        for (let i = 0; i < ringCount; i++) {
+            rings.push({
+                phase: (i / ringCount) * maxLife,
+                radius: baseRadius + i * radiusStep
+            });
+        }
+
+        let startTime = performance.now();
+        let ringsAnimId;
+
+        function drawRings(timestamp) {
+            ringsAnimId = requestAnimationFrame(drawRings);
+            const elapsed = (timestamp - startTime) * 0.001 * speed;
+
+            rCtx.clearRect(0, 0, rW, rH);
+            const cx = rW / 2;
+            const cy = rH / 2;
+
+            for (let i = 0; i < ringCount; i++) {
+                const ring = rings[i];
+                const t = (elapsed + ring.phase) % maxLife;
+                const progress = t / maxLife;
+
+                // Radius expands over time
+                const r = ring.radius + progress * 60;
+
+                // Fade in then fade out
+                let alpha;
+                if (progress < 0.2) {
+                    alpha = progress / 0.2;
+                } else if (progress > 0.7) {
+                    alpha = 1 - (progress - 0.7) / 0.3;
+                } else {
+                    alpha = 1;
+                }
+                alpha *= 0.35; // Keep it subtle so it doesn't overpower the HUD
+
+                // Gradient from cyan to green
+                const ratio = i / (ringCount - 1);
+                const red = Math.round(0 + ratio * 80);
+                const green = Math.round(212 + ratio * 38);
+                const blue = Math.round(255 - ratio * 132);
+
+                // Ring line thickness varies
+                const thickness = Math.max(1, 2.5 - progress * 1.5);
+
+                // Draw the ring arc (not full circle for style — slight gap)
+                const gapAngle = 0.15 + i * 0.05;
+                const rotationOffset = elapsed * 0.3 + i * 0.8;
+
+                rCtx.beginPath();
+                rCtx.arc(cx, cy, r, rotationOffset + gapAngle, rotationOffset + Math.PI * 2 - gapAngle);
+                rCtx.strokeStyle = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+                rCtx.lineWidth = thickness;
+                rCtx.shadowColor = `rgba(${red}, ${green}, ${blue}, ${alpha * 0.8})`;
+                rCtx.shadowBlur = 15;
+                rCtx.stroke();
+
+                // Small tick marks at quadrant points
+                for (let q = 0; q < 4; q++) {
+                    const tickAngle = rotationOffset + q * (Math.PI / 2);
+                    const innerR = r - 6;
+                    const outerR = r + 6;
+                    rCtx.beginPath();
+                    rCtx.moveTo(cx + Math.cos(tickAngle) * innerR, cy + Math.sin(tickAngle) * innerR);
+                    rCtx.lineTo(cx + Math.cos(tickAngle) * outerR, cy + Math.sin(tickAngle) * outerR);
+                    rCtx.strokeStyle = `rgba(${red}, ${green}, ${blue}, ${alpha * 0.6})`;
+                    rCtx.lineWidth = 1;
+                    rCtx.shadowBlur = 0;
+                    rCtx.stroke();
+                }
+            }
+
+            // Central glow pulse
+            const pulseAlpha = 0.08 + Math.sin(elapsed * 2) * 0.04;
+            const gradient = rCtx.createRadialGradient(cx, cy, 0, cx, cy, baseRadius);
+            gradient.addColorStop(0, `rgba(0, 212, 255, ${pulseAlpha})`);
+            gradient.addColorStop(0.5, `rgba(0, 123, 255, ${pulseAlpha * 0.5})`);
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            rCtx.fillStyle = gradient;
+            rCtx.fillRect(0, 0, rW, rH);
+        }
+
+        ringsAnimId = requestAnimationFrame(drawRings);
+
+        // Stop animation when loader hides
+        const loaderObserver = new MutationObserver(() => {
+            if (loader.style.display === 'none') {
+                cancelAnimationFrame(ringsAnimId);
+                loaderObserver.disconnect();
+            }
+        });
+        loaderObserver.observe(loader, { attributes: true, attributeFilter: ['style'] });
+    }
 
     // --- 3. TERMINAL INTERACTION ---
     const msgInput = document.getElementById('messageInput');
@@ -1315,9 +1441,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    function renderDossierCard(data) {
+    function renderDossierCard(data, href) {
         if (!data) return "";
         const skillsMarkup = data.skills.map(s => `<span class="dossier-skill-tag">[${s}]</span>`).join(" ");
+        const externalLinkBtn = href ? `<a href="${href}" target="_blank" class="send-btn" style="margin-top: 15px; display: inline-block; text-decoration: none; width: 100%; text-align: center;">[ACCESS_EXTERNAL_DRIVE_NODE]</a>` : "";
+        const imagePlaceholder = `<div class="dossier-image-placeholder" style="width: 100%; height: 200px; background: rgba(0, 123, 255, 0.1); border: 1px dashed var(--primary-blue); margin-bottom: 15px; display: flex; align-items: center; justify-content: center;">
+            <span style="color: var(--primary-blue); opacity: 0.6; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">[CERTIFICATE_IMAGE_SLOT]</span>
+        </div>`;
+
         return `
             <div class="simulated-dossier-card">
                 <span class="dossier-badge">${data.badge}</span>
@@ -1331,6 +1462,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="meta-val">RESTRICTED_ACCESS</span>
                     </div>
                 </div>
+                ${imagePlaceholder}
                 <div class="dossier-cert-body">
                     <h4>${data.title}</h4>
                     <p style="color: var(--text-white); font-weight: bold; font-size: 0.9rem; margin-bottom: 5px;">${data.role}</p>
@@ -1343,19 +1475,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span>${data.footer}</span>
                     <span style="color: var(--accent-green)">● SIGNATURE_VERIFIED</span>
                 </div>
+                ${externalLinkBtn}
             </div>
         `;
     }
 
-    function updateGallerySlide() {
+    function updateGallerySlide(href) {
         if (!galleryAssets.length) return;
         const currentData = galleryAssets[currentGalleryIndex];
         const countSpan = modal ? modal.querySelector('.gallery-page-indicator') : null;
-        if (dossierContent) dossierContent.innerHTML = renderDossierCard(currentData);
+        if (dossierContent) dossierContent.innerHTML = renderDossierCard(currentData, href);
         if (countSpan) countSpan.innerText = `ASSET ${currentGalleryIndex + 1} OF ${galleryAssets.length}`;
     }
 
-    function triggerModalDecryption(dossierKey) {
+    function triggerModalDecryption(dossierKey, href) {
         if (!modal) return;
         
         // Show modal and overlay
@@ -1400,12 +1533,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (dossierKey === 'languages') {
                             galleryAssets = dossierData.languages;
                             currentGalleryIndex = 0;
-                            updateGallerySlide();
+                            updateGallerySlide(href);
                             if (modalFooter) modalFooter.style.display = 'flex';
                         } else {
                             galleryAssets = [];
                             const cardData = dossierData[dossierKey] || dossierData.project;
-                            if (dossierContent) dossierContent.innerHTML = renderDossierCard(cardData);
+                            if (dossierContent) dossierContent.innerHTML = renderDossierCard(cardData, href);
                             if (modalFooter) modalFooter.style.display = 'none';
                         }
                     }, 300);
@@ -1444,7 +1577,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dossierKey = 'utem';
         }
         
-        triggerModalDecryption(dossierKey);
+        triggerModalDecryption(dossierKey, href);
         
         if (typeof addLiveLog === 'function') {
             addLiveLog(`DECRYPT: Secure dossier clearance loaded [${dossierKey.toUpperCase()}]`);
@@ -1550,6 +1683,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
             coordHud.querySelector('.coord-x').innerText = `X: ${String(normX).padStart(4, '0')}`;
             coordHud.querySelector('.coord-y').innerText = `Y: ${String(normY).padStart(4, '0')}`;
+        });
+    });
+
+    // --- TASK 17: SCROLL REVEAL OBSERVER ---
+    const revealElements = document.querySelectorAll('.glass-card, .instrument-box');
+    revealElements.forEach(el => el.classList.add('reveal-on-scroll'));
+
+    const scrollRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                scrollRevealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => scrollRevealObserver.observe(el));
+
+    // --- TASK 17: HOVER SOUNDS (Web Audio API) ---
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function playHoverBeep() {
+        if (!audioCtx) {
+            audioCtx = new AudioContext();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, audioCtx.currentTime); // High pitch beep
+        osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.05);
+        
+        gainNode.gain.setValueAtTime(0.02, audioCtx.currentTime); // Very low volume
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.05);
+    }
+
+    // Attach hover sound to primary buttons and interactive elements
+    const hoverTargets = document.querySelectorAll('.glass-card, .instrument-box, button, .proof-link');
+    hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            playHoverBeep();
         });
     });
 
